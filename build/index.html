@@ -8,39 +8,46 @@
     <header class="main-header">
       <a><img src="img/logo.svg" alt="Логотип магазина Device"></a>
       <nav class="user-navigation">
-        <!-- Здесь будет форма поиска -->
-        <ul class="user-navigation-list">
-          <li class="user-navigation-item"><a href="#">Войти</a></li>
-          <li class="user-navigation-item"><a href="#">Сравнить</a></li>
-          <li class="user-navigation-item"><a href="#">Корзина</a></li>
+        <form class="search__form" action="https://echo.htmlacademy.ru" method="post">
+          <label class="visually-hidden" for="search">Поиск</label>
+          <input type="text" id="search" name="search" value="" placeholder="Поиск по сайту">
+          <button class="visually-hidden" type="submit">Отправить</button>
+        </form>
+        <ul class="user-navigation__list">
+          <li class="user-navigation-list__item"><a href="#">Войти</a></li>
+          <li class="user-navigation-list__item"><a href="#">Сравнить</a></li>
+          <li class="user-navigation-list__item"><a href="#">Корзина</a></li>
         </ul>
       </nav>
       <nav class="main-navigation">
-        <ul class="main-navigation-list">
-          <li class="main-navigation-item">
-            <a href="#">Каталог товаров</a>
-            <ul class="catalog-list">
-              <li class="catalog-item"><a href="#">Виртуальная реальность</a></li>
-              <li class="catalog-item"><a href="catalog.html">Моноподы для селфи</a></li>
-              <li class="catalog-item"><a href="#">Экшн-камеры</a></li>
-              <li class="catalog-item"><a href="#">Фитнес-браслеты</a></li>
-              <li class="catalog-item"><a href="#">Умные часы</a></li>
-              <li class="catalog-item"><a href="#">Квадрокоптеры</a></li>
+        <ul class="main-navigation__list">
+          <li class="main-navigation__item">
+            <button class="catalog__button">Каталог товаров</button>
+            <ul class="catatalog__list">
+              <li class="catalog__item"><a href="#">Виртуальная реальность</a></li>
+              <li class="catalog__item"><a href="catalog.html">Моноподы для селфи</a></li>
+              <li class="catalog__item"><a href="#">Экшн-камеры</a></li>
+              <li class="catalog__item"><a href="#">Фитнес-браслеты</a></li>
+              <li class="catalog__item"><a href="#">Умные часы</a></li>
+              <li class="catalog__item"><a href="#">Квадрокоптеры</a></li>
             </ul>
           </li>
-          <li class="main-navigation-item"><a href="#">Доставка</a></li>
-          <li class="main-navigation-item"><a href="#">Гарантия</a></li>
-          <li class="main-navigation-item"><a href="#">Контакты</a></li>
+          <li class="main-navigation__item"><a href="#">Доставка</a></li>
+          <li class="main-navigation__item"><a href="#">Гарантия</a></li>
+          <li class="main-navigation__item"><a href="#">Контакты</a></li>
         </ul>
       </nav>
     </header>
-    <main class="container">
+    <main class="main-container">
       <section class="promo">
         <h2 class="visually-hidden">Популярные товары</h2>
-        <ol class="promo-slides">
-          <li class="promo-item">
+        <ol class="promo__slides">
+          <li class="promo-slider__item">
             <h3>Делай селфи, как Бен Стиллер!</h3>
-            <img src="img/promo1" alt="Селфи-палка">
+            <picture>
+              <source srcset="img/slider/slider-1.webp" type="image/webp">
+              <img class="catalog-item__image" src="img/slider/slider-1.jpg" alt="Селфи-палка">
+            </picture>
             <p>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
             <a href="#" class="button">Подробнее</a>
             <table class="promo-table">
@@ -56,9 +63,12 @@
               </tr>
             </table>
           </li>
-          <li class="promo-item">
+          <li class="promo-slider__item">
             <h3>Худеем правильно!</h3>
-            <img src="img/promo2" alt="Фитнес-браслет">
+            <picture>
+              <source srcset="img/slider/slider-2.webp" type="image/webp">
+              <img class="catalog-item__image" src="img/slider/slider-2.jpg" alt="Фитнес-браслет">
+            </picture>
             <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
             <a href="#" class="button">Подробнее</a>
             <table class="promo-table">
@@ -70,9 +80,12 @@
               </tr>
             </table>
           </li>
-          <li class="promo-item">
+          <li class="promo-slider__item">
             <h3>Порхает как бабочка, жалит как пчела!</h3>
-            <img src="img/promo3" alt="Квадракоптер">
+            <picture>
+              <source srcset="img/slider/slider-3.webp" type="image/webp">
+              <img class="catalog-item__image" src="img/slider/slider-3.jpg" alt="Квадракоптер">
+            </picture>
             <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
             <a href="#" class="button">Подробнее</a>
             <table class="promo-table">
@@ -90,42 +103,60 @@
       </section>
       <section class="categrories">
         <h2 class="visually-hidden">Категории товаров</h2>
-        <ul class="categrories-list">
-          <li class="categrories-item">
-            <a href="#"><p><img src="img/category1" alt="Виртуальная реальность"><span>Виртуальная реальность</span></p></a>
+        <ul class="categrories__list">
+          <li class="categrories__item">
+            <a href="#"><p>
+              <img src="img/popular/popular-1.svg" alt="Виртуальная реальность">
+              <span>Виртуальная реальность</span>
+            </p></a>
           </li>
-          <li class="categrories-item">
-            <a href="#"><p><img src="img/category2" alt="Моноподы для селфи"><span>Моноподы для селфи</span></p></a>
+          <li class="categrories__item">
+            <a href="#"><p>
+              <img src="img/popular/popular-2.svg" alt="Моноподы для селфи">
+              <span>Моноподы для селфи</span>
+            </p></a>
           </li>
-          <li class="categrories-item">
-            <a href="#"><p><img src="img/category3" alt="Экшн-камеры"><span>Экшн-камеры</span></p></a>
+          <li class="categrories__item">
+            <a href="#"><p>
+              <img src="img/popular/popular-3.svg" alt="Экшн-камеры">
+              <span>Экшн-камеры</span>
+            </p></a>
           </li>
-          <li class="categrories-item">
-            <a href="#"><p><img src="img/category4" alt="Фитнес-браслеты"><span>Фитнес-браслеты</span></p></a>
+          <li class="categrories__item">
+            <a href="#"><p>
+              <img src="img/popular/popular-4.svg" alt="Фитнес-браслеты">
+              <span>Фитнес-браслеты</span>
+            </p></a>
           </li>
-          <li class="categrories-item">
-            <a href="#"><p><img src="img/category5" alt="Умные часы"><span>Умные часы</span></p></a>
+          <li class="categrories__item">
+            <a href="#"><p>
+              <img src="img/popular/popular-5.svg" alt="Умные часы">
+              <span>Умные часы</span>
+            </p></a>
           </li>
-          <li class="categrories-item">
-            <a href="#"><p><img src="img/category6" alt="Квадрокоптеры"><span>Квадрокоптеры</span></p></a>
+          <li class="categrories__item">
+            <a href="#"><p>
+              <img src="img/popular/popular-6.svg" alt="Квадрокоптеры">
+              <span>Квадрокоптеры</span>
+            </p></a>
           </li>
         </ul>
       </section>
       <section class="conditions">
         <h2 class="visually-hidden">Условия</h2>
-        <ul class="conditions-list">
-          <li class="conditions-item">
-            <a href="#" class="button button-current">Доставка</a>
+        <ul class="conditions__list">
+          <li class="conditions__item">
+            <button class="conditions__button-current" disabled>Доставка</button>
             <h3>Доставка</h3>
             <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
           </li>
-          <li class="conditions-item">
-            <a href="#" class="button">Гарантия</a>
+          <li class="conditions__item">
+            <button class="conditions__button">Гарантия</button>
             <h3>Гарантия</h3>
             <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
           </li>
-          <li class="conditions-item">
-            <a href="#" class="button">Кредит</a>
+          <li class="conditions__item">
+            <button class="conditions__button">Кредит</button>
             <h3>Кредит</h3>
             <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
           </li>
@@ -133,15 +164,35 @@
       </section>
       <section class="partners">
         <h2 class="visually-hidden">Наши партнеры</h2>
-        <ul class="partners-list">
-          <li class="partners-iter"><a href="#"><img src="partner1" alt="DJI"></a></li>
-          <li class="partners-iter"><a href="#"><img src="partner2" alt="SP Gadget"></a></li>
-          <li class="partners-iter"><a href="#"><img src="partner3" alt="GoPro"></a></li>
-          <li class="partners-iter"><a href="#"><img src="partner4" alt="Vive"></a></li>
+        <ul class="partners__list">
+          <li class="partners__item"><a href="#">
+            <picture>
+              <source srcset="img/partners/logo-1.webp" type="image/webp">
+              <img class="partners__image" src="img/partners/logo-1.png" width="260" height="100" alt="DJI">
+            </picture>
+          </a></li>
+          <li class="partners__item"><a href="#">
+            <picture>
+              <source srcset="img/partners/logo-2.webp" type="image/webp">
+              <img class="partners__image" src="img/partners/logo-2.png" width="260" height="100" alt="SP Gadget">
+            </picture>
+          </a></li>
+          <li class="partners__item"><a href="#">
+            <picture>
+              <source srcset="img/partners/logo-3.webp" type="image/webp">
+              <img class="partners__image" src="img/partners/logo-3--bw.png" width="260" height="100" alt="GoPro">
+            </picture>
+          </a></li>
+          <li class="partners__item"><a href="#">
+            <picture>
+              <source srcset="img/partners/logo-4.webp" type="image/webp">
+              <img class="partners__image" src="img/partners/logo-4.png" width="260" height="100" alt="Vive">
+            </picture>
+          </a></li>
         </ul>
       </section>
       <section class="about">
-        <h2 class="title">О нас</h2>
+        <h2 class="about__title">О нас</h2>
         <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
         <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями</p>
         <ul>
@@ -149,11 +200,11 @@
           <li>Автотрейдинг</li>
           <li>ЖелДорЭкспедиция</li>
         </ul>
-        <a href="#" class="button">Подробнее о нас</a>
+        <a href="#" class="about__button">Подробнее о нас</a>
       </section>
-      <section class="modal-feedback">
+      <section class="feedback">
         <h2 class="visually-hidden">Напишите нам</h2>
-        <span>x</span>
+        <button class="feedback__button-close">Закрыть</button>
         <!-- Здесь будет форма -->
       </section>
       <section class="contacts">
